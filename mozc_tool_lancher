@@ -1,0 +1,25 @@
+#! /bin/sh
+
+while :
+do
+  clear
+  echo "1 : Mozc 設定"
+  echo "2 : Mozc 辞書ツール"
+  echo "3 : Mozc 単語登録"
+  echo "4 : Mozc 手書き文字入力"
+  echo "5 : Mozc 文字パレット"
+  echo "6 : Mozc について"
+  echo "9 : Exit"
+  echo -n "> "
+  read key
+  case "$key" in
+    "1" ) /usr/lib/mozc/mozc_tool --mode=config_dialog ;;
+    "2" ) /usr/lib/mozc/mozc_tool --mode=dictionary_tool ;;
+    "3" ) /usr/lib/mozc/mozc_tool --mode=word_register_dialog ;;
+    "4" ) /usr/lib/mozc/mozc_tool --mode=hand_writing ;;
+    "5" ) /usr/lib/mozc/mozc_tool --mode=character_palette ;;
+    "6" ) /usr/lib/mozc/mozc_tool ;;
+    "9" ) exit;;
+  esac
+done
+
